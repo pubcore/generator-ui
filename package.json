@@ -12,6 +12,10 @@
     "yeoman-generator"
   ],
   "author": "pubcore",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:pubcore/generator-ui.git"
+  },
   "license": "MIT",
   "dependencies": {
     "lodash.get": "^4.4.2",
