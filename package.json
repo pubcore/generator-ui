@@ -1,0 +1,26 @@
+{
+  "name": "@pubcore/generator-ui",
+  "version": "1.0.0",
+  "description": "create ui package scaffolding",
+  "files": [
+    "app"
+  ],
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "pubcore",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "update-notifier": "^2.5.0",
+    "yeoman-generator": "^3.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^1.9.1"
+  }
+}
