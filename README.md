@@ -5,7 +5,8 @@
 ### Prerequisites
 * latest version of nodejs
 * latest version of npm
-* @pubcore/node-composition installed and context_path is added in config.json
+* optional (Install will succeed without this, too):  
+@pubcore/node-composition installed and context_path is added in config.json
 
 ### It will create/setup minimum package structure to support
 * eslint
