@@ -17,8 +17,7 @@
 * redux
 
 ### Install it global
-
-	npm install -g @pubcore/generator-ui
+	npm install -g yo @pubcore/generator-ui
 
 ### How to use
 1) create a directory (convention lower case and dash-separated)
