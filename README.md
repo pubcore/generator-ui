@@ -31,4 +31,4 @@
 
 3) execute
 
-		yo ui
+		yo @pubcore/ui
