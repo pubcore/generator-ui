@@ -45,5 +45,6 @@ module.exports = {
 		maxEntrypointSize: 1024 * 1024 * 2,
 		maxAssetSize: 1024 * 1024 * 2
 	},
-	plugins:[new ManifestPlugin({fileName:'./js/manifest.json'})]
+	plugins:[new ManifestPlugin({fileName:'./js/manifest.json'})],
+	devtool:'eval-source-map'
 }
