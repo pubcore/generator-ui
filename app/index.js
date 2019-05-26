@@ -1,5 +1,4 @@
 var Generator = require('yeoman-generator'),
-	get = require('lodash.get'),
 	updateNotifier = require('update-notifier'),
 	pkg = require('../package.json')
 
@@ -8,10 +7,6 @@ updateNotifier({pkg}).notify()
 module.exports = class extends Generator {
 	constructor(args, opts) {
 		super(args, opts)
-	}
-	initializing(){
-		this.compositionConfig =
-			this.fs.readJSON('../node-composition-local/config.json')
 	}
 	async prompting() {
 		this.answers = await this.prompt([{
@@ -23,17 +18,9 @@ module.exports = class extends Generator {
 			type: 'input',
 			name: 'description',
 			message: 'package description',
-		}, {
-			type    : 'input',
-			name    : 'contextPath',
-			message : 'context-path',
-			default : answers => get(
-  				this.compositionConfig, ['components', answers.name, 'context_path']
-  			)
 		}])
 		this.log('package name', this.answers.name)
 		this.log('package description', this.answers.description)
-		this.log('contextPath', this.answers.contextPath)
 	}
 	writing(){
 		this.fs.copy(
