@@ -46,7 +46,7 @@ module.exports = class extends Generator {
 		)
 	}
 	install(){
-		this.log('Install packages ...');
+		this.log('Install packages ...')
 		this.npmInstall([
 			'@babel/cli', '@babel/core', 'babel-loader',
 			'@babel/plugin-proposal-object-rest-spread', '@babel/preset-env',
@@ -57,7 +57,7 @@ module.exports = class extends Generator {
 
 		this.npmInstall([
 			'@fortawesome/fontawesome-free',
-			'@pubcore/redux-browser-history', 'axios', '@babel/polyfill',
+			'@pubcore/redux-browser-history', '@pubcore/http-client', '@babel/polyfill',
 			'bootstrap', '@pubcore/react-datatable', 'pubcore-state',
 			'pubcore-ui-text', 'qs', 'react', 'react-dom', 'react-grid-layout',
 			'redux', 'redux-create-reducer', 'redux-thunk', 'window-or-global'
