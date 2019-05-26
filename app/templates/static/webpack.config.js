@@ -46,5 +46,5 @@ module.exports = {
 		maxAssetSize: 1024 * 1024 * 2
 	},
 	plugins:[new ManifestPlugin({fileName:'./js/manifest.json'})],
-	devtool:'eval-source-map'
+	devtool:'inline-source-map'
 }
