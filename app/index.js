@@ -1,6 +1,7 @@
 var Generator = require('yeoman-generator'),
 	updateNotifier = require('update-notifier'),
-	pkg = require('../package.json')
+	pkg = require('../package.json'),
+	{basename, resolve} = require('path')
 
 updateNotifier({pkg}).notify()
 
@@ -13,7 +14,7 @@ module.exports = class extends Generator {
 			type    : 'input',
 			name    : 'name',
 			message : 'Your project name',
-			default : this.appname
+			default : `@${basename(resolve(process.cwd(), '..'))}/${this.appname.replace(/\s+/g, '-')}`
 		},{
 			type: 'input',
 			name: 'description',
