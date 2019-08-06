@@ -29,6 +29,10 @@ module.exports = class extends Generator {
 			this.destinationPath('.'),
 			{globOptions:{dot:true}}
 		)
+		this.fs.copy(
+			this.templatePath('_gitignore'),
+			this.destinationPath('.gitignore')
+		)
 		this.fs.copyTpl(
 			this.templatePath('package-json'),
 			this.destinationPath('./package.json'),
