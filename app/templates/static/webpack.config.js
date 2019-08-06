@@ -70,7 +70,7 @@ module.exports = {
 		maxAssetSize: 1024 * 1024 * 2
 	},
 	plugins:[
-		new ManifestPlugin({fileName:'./htdocs/manifest.json'}),
+		new ManifestPlugin({fileName:'./manifest.json'}),
 		new MiniCssExtractPlugin({filename: '[name].css'})
 	],
 	devtool:'inline-source-map'

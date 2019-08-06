@@ -1,5 +1,5 @@
 'use strict'
-const manifest = require('../manifest.json')
+const manifest = require('../../manifest.json')
 var appJs = manifest['htdocs/js/app.js'].replace(/^[^/]+/, '')
 
 module.exports = (req, res) => {
