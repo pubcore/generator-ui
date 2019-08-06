@@ -1,7 +1,8 @@
-import manifest from '../manifest.json'
+'use strict'
+const manifest = require('../manifest.json')
 var appJs = manifest['htdocs/js/app.js'].replace(/^[^/]+/, '')
 
-export default (req, res) => {
+module.exports = (req, res) => {
 	var {component, baseUrl, user, locale} = req
 	res.send(`<!DOCTYPE html>
 <html lang="${locale||'en-US'}">
