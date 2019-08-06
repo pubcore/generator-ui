@@ -5,12 +5,8 @@
   "main": "js/index.js",
   "scripts": {
     "postinstall": "npm run copyFontFiles && npm run build",
-    "build": "npm run js:build && npm run sass:build",
-    "js:build": "webpack --mode production",
-    "js:watch": "webpack --mode development --watch",
-    "sass:build": "node-sass --include-path node_modules/ --output-style compressed --source-map htdocs/css/ -o htdocs/css/ scss/",
-    "sass:watch": "node-sass --watch --include-path node_modules/ --source-map-embed -o htdocs/css/ scss/",
-    "watch": "npm run sass:watch | npm run js:watch",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
     "copyFontFiles": "ncp node_modules/@fortawesome/fontawesome-free/webfonts htdocs/fonts"
   },
   "license": "MIT",

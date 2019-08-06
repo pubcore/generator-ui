@@ -52,7 +52,8 @@ module.exports = class extends Generator {
 			'@babel/plugin-proposal-object-rest-spread', '@babel/preset-env',
 			'@babel/preset-react', '@babel/runtime',
 			'eslint', 'eslint-plugin-react', 'ncp', 'node-sass', 'webpack',
-			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals'
+			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals',
+			'mini-css-extract-plugin', 'sass-loader', 'css-loader'
 		], {'save-dev': true })
 
 		this.npmInstall([

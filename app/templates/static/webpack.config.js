@@ -1,9 +1,11 @@
 const path = require('path'),
-	ManifestPlugin = require('webpack-manifest-plugin')
+	ManifestPlugin = require('webpack-manifest-plugin'),
+	MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	entry: {
-		'htdocs/js/app': path.resolve(__dirname, 'src', 'app.js')
+		'htdocs/js/app': path.resolve(__dirname, 'src', 'app.js'),
+		'htdocs/css/main': path.resolve(__dirname, 'scss', 'main.scss'),
 	},
 	output: {
 		path: __dirname,
@@ -38,6 +40,28 @@ module.exports = {
 						]
 					}
 				}
+			},
+			{
+				test: /\.scss$/,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader
+					},
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: false,
+							url: false
+						}
+					},
+					{
+						loader: 'sass-loader',
+						options: {
+							includePaths: ['node_modules/'],
+							sourceMap: false
+						}
+					}
+				]
 			}
 		]
 	},
@@ -45,6 +69,9 @@ module.exports = {
 		maxEntrypointSize: 1024 * 1024 * 2,
 		maxAssetSize: 1024 * 1024 * 2
 	},
-	plugins:[new ManifestPlugin({fileName:'./js/manifest.json'})],
+	plugins:[
+		new ManifestPlugin({fileName:'./htdocs/manifest.json'}),
+		new MiniCssExtractPlugin({filename: '[name].css'})
+	],
 	devtool:'inline-source-map'
 }
