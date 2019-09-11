@@ -63,7 +63,7 @@ module.exports = class extends Generator {
 		this.npmInstall([
 			'@fortawesome/fontawesome-free',
 			'@pubcore/redux-browser-history', '@pubcore/http-client', '@babel/polyfill',
-			'bootstrap', '@pubcore/react-datatable', 'pubcore-state',
+			'bootstrap', '@pubcore/react-datatable', '@pubcore/state',
 			'pubcore-ui-text', 'qs', 'react', 'react-dom', 'react-grid-layout',
 			'redux', 'redux-create-reducer', 'redux-thunk', 'window-or-global'
 		], {save:true})

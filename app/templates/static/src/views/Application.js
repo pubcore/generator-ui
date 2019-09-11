@@ -1,6 +1,6 @@
 import React from 'react'
 import uiText from 'pubcore-ui-text'
-import S from 'pubcore-state'
+import S from '@pubcore/state'
 
 export default function Application(){
 	var T = S('T')

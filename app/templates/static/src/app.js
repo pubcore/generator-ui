@@ -8,7 +8,7 @@ import {render} from 'react-dom'
 import rootReducer from 'reducer/rootReducer'
 import initAction from 'action/appInit'
 import thunkMiddleware from 'redux-thunk'
-import {setStore} from 'pubcore-state'
+import {setStore} from '@pubcore/state'
 import {listenUri} from '@pubcore/redux-browser-history'
 import T from './resources/text'
 
