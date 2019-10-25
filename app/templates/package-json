@@ -4,10 +4,9 @@
   "description": "<%= description %>",
   "main": "js/index.js",
   "scripts": {
-    "postinstall": "npm run copyFontFiles && npm run build",
+    "postinstall": "npm run build",
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "copyFontFiles": "ncp node_modules/@fortawesome/fontawesome-free/webfonts htdocs/fonts"
+    "watch": "webpack --mode development --watch"
   },
   "license": "MIT",
   "babel": {

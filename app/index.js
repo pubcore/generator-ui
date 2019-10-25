@@ -43,10 +43,7 @@ module.exports = class extends Generator {
 		)
 		this.fs.copyTpl(
 			this.templatePath('_externals.scss'),
-			this.destinationPath('./scss/_externals.scss'),
-			{
-				fontPath:this.answers.contextPath + '/fonts',
-			}
+			this.destinationPath('./scss/_externals.scss')
 		)
 	}
 	install(){
@@ -55,17 +52,16 @@ module.exports = class extends Generator {
 			'@babel/cli', '@babel/core', 'babel-loader',
 			'@babel/plugin-proposal-object-rest-spread', '@babel/preset-env',
 			'@babel/preset-react', '@babel/runtime',
-			'eslint', 'eslint-plugin-react', 'ncp', 'node-sass', 'webpack',
+			'eslint', 'eslint-plugin-react', 'node-sass', 'webpack',
 			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals',
 			'mini-css-extract-plugin', 'sass-loader', 'css-loader'
 		], {'save-dev': true })
 
 		this.npmInstall([
-			'@fortawesome/fontawesome-free',
 			'@pubcore/redux-browser-history', '@pubcore/http-client', '@babel/polyfill',
-			'bootstrap', '@pubcore/react-datatable', '@pubcore/state',
-			'pubcore-ui-text', 'qs', 'react', 'react-dom', 'react-grid-layout',
-			'redux', 'redux-create-reducer', 'redux-thunk', 'window-or-global'
+			'@pubcore/react-datatable', '@pubcore/state', '@pubcore/ui-text',
+			'qs', 'react', 'react-dom', 'redux', 'redux-create-reducer',
+			'redux-thunk', 'window-or-global'
 		], {save:true})
 		this.npmInstall()
 	}

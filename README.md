@@ -12,8 +12,6 @@
 * eslint
 * transpiler for ECS6 with spread operator
 * webpack for bundeling js and css
-* bootstrap4
-* fontawesome
 * react
 * redux
 

@@ -11,17 +11,6 @@ module.exports = {
 		path: __dirname,
 		filename: '[name].[contenthash].js'
 	},
-	resolve: {
-		alias: {
-			views: path.resolve(__dirname, 'src/views/'),
-			lib: path.resolve(__dirname, 'src/lib/'),
-			action: path.resolve(__dirname, 'src/action/'),
-			reducer: path.resolve(__dirname, 'src/reducer/'),
-			carrier: path.resolve(__dirname, 'src/carrier/'),
-			props: path.resolve(__dirname, 'src/props/'),
-			gofer: path.resolve(__dirname, 'src/gofer/')
-		}
-	},
 	module: {
 		rules: [
 			{
@@ -57,7 +46,7 @@ module.exports = {
 					{
 						loader: 'sass-loader',
 						options: {
-							includePaths: ['node_modules/'],
+							sassOptions:{includePath: ['node_modules/']},
 							sourceMap: false
 						}
 					}
