@@ -1,15 +1,13 @@
 const path = require('path'),
-	ManifestPlugin = require('webpack-manifest-plugin'),
-	MiniCssExtractPlugin = require('mini-css-extract-plugin')
+	ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
 	entry: {
-		'htdocs/js/app': path.resolve(__dirname, 'src', 'app.js'),
-		'htdocs/css/main': path.resolve(__dirname, 'scss', 'main.scss'),
+		'htdocs/js/app': path.resolve(__dirname, 'src', 'app.js')
 	},
 	output: {
 		path: __dirname,
-		filename: '[name].[contenthash].js'
+		filename: `[name]_${require('./package.json').version.replace(/\./g, '-')}.js`
 	},
 	module: {
 		rules: [
@@ -29,28 +27,6 @@ module.exports = {
 						]
 					}
 				}
-			},
-			{
-				test: /\.scss$/,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader
-					},
-					{
-						loader: 'css-loader',
-						options: {
-							sourceMap: false,
-							url: false
-						}
-					},
-					{
-						loader: 'sass-loader',
-						options: {
-							sassOptions:{includePath: ['node_modules/']},
-							sourceMap: false
-						}
-					}
-				]
 			}
 		]
 	},
@@ -59,8 +35,7 @@ module.exports = {
 		maxAssetSize: 1024 * 1024 * 2
 	},
 	plugins:[
-		new ManifestPlugin({fileName:'./manifest.json'}),
-		new MiniCssExtractPlugin({filename: '[name].css'})
+		new ManifestPlugin({fileName:'./manifest.json'})
 	],
 	devtool:'inline-source-map'
 }

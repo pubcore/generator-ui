@@ -41,10 +41,6 @@ module.exports = class extends Generator {
 				description: this.answers.description
 			}
 		)
-		this.fs.copyTpl(
-			this.templatePath('_externals.scss'),
-			this.destinationPath('./scss/_externals.scss')
-		)
 	}
 	install(){
 		this.log('Install packages ...')
@@ -52,17 +48,18 @@ module.exports = class extends Generator {
 			'@babel/cli', '@babel/core', 'babel-loader',
 			'@babel/plugin-proposal-object-rest-spread', '@babel/preset-env',
 			'@babel/preset-react', '@babel/runtime',
-			'eslint', 'eslint-plugin-react', 'node-sass', 'webpack',
-			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals',
-			'mini-css-extract-plugin', 'sass-loader', 'css-loader'
+			'eslint', 'eslint-plugin-react', 'webpack',
+			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals'
 		], {'save-dev': true })
 
 		this.npmInstall([
 			'@pubcore/redux-browser-history', '@pubcore/http-client', '@babel/polyfill',
-			'@pubcore/react-datatable', '@pubcore/state', '@pubcore/ui-text',
-			'qs', 'react', 'react-dom', 'redux', 'redux-create-reducer',
-			'redux-thunk', 'window-or-global'
+			'@pubcore/state', '@pubcore/ui-text', 'qs', 'react', 'react-dom', 'redux',
+			'redux-create-reducer', 'redux-thunk', 'window-or-global'
 		], {save:true})
 		this.npmInstall()
+		this.spawnCommandSync('git', ['init'])
+		this.spawnCommandSync('git', ['add', '.'])
+		this.spawnCommandSync('git', ['commit', '-m "init"'])
 	}
 }

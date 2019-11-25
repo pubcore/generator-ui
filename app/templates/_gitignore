@@ -6,7 +6,5 @@ node_modules/
 .nyc_output
 dist/
 mydb.sqlite
-htdocs/css
 htdocs/js
-htdocs/fonts
 manifest.json

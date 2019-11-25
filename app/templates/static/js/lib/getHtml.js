@@ -3,7 +3,7 @@ const manifest = require('../../manifest.json')
 var appJs = manifest['htdocs/js/app.js'].replace(/^[^/]+/, '')
 
 module.exports = (req, res) => {
-	var {component, baseUrl, user, locale} = req
+	var {component, baseUrl, user, locale, resources} = req
 	res.send(`<!DOCTYPE html>
 <html lang="${locale||'en-US'}">
 <head>
@@ -20,7 +20,8 @@ module.exports = (req, res) => {
 	<script>window.appResources = ${JSON.stringify({
 		user,
 		component,
-		context_path:baseUrl
+		context_path:baseUrl,
+		resources
 	})}</script>
 	<script src="${baseUrl+appJs}" type="text/javascript"></script>
 </body>
