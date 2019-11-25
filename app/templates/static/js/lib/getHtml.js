@@ -1,7 +1,6 @@
 'use strict'
-const manifest = require('../../manifest.json')
-var appJs = manifest['htdocs/js/app.js'].replace(/^[^/]+/, '')
-
+const manifest = require('./manifest.json')
+var appJs = manifest['app.js']
 module.exports = (req, res) => {
 	var {component, baseUrl, user, locale, resources} = req
 	res.send(`<!DOCTYPE html>
@@ -23,7 +22,7 @@ module.exports = (req, res) => {
 		context_path:baseUrl,
 		resources
 	})}</script>
-	<script src="${baseUrl+appJs}" type="text/javascript"></script>
+	<script src="${appJs}" type="text/javascript"></script>
 </body>
 </html>
 `)}

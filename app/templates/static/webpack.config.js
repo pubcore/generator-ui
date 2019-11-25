@@ -1,12 +1,13 @@
-const path = require('path'),
-	ManifestPlugin = require('webpack-manifest-plugin')
+const {join} = require('path'),
+	ManifestPlugin = require('webpack-manifest-plugin'),
+	{ CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
 	entry: {
-		'htdocs/js/app': path.resolve(__dirname, 'src', 'app.js')
+		'app': join(__dirname, 'src', 'app.js')
 	},
 	output: {
-		path: __dirname,
+		path: join(__dirname, 'htdocs', 'js'),
 		filename: `[name]_${require('./package.json').version.replace(/\./g, '-')}.js`
 	},
 	module: {
@@ -30,12 +31,12 @@ module.exports = {
 			}
 		]
 	},
-	performance: {
-		maxEntrypointSize: 1024 * 1024 * 2,
-		maxAssetSize: 1024 * 1024 * 2
-	},
 	plugins:[
-		new ManifestPlugin({fileName:'./manifest.json'})
+		new ManifestPlugin({
+			fileName:join(__dirname, 'js', 'lib', 'manifest.json'),
+			publicPath:'js/'
+		}),
+		new CleanWebpackPlugin()
 	],
 	devtool:'inline-source-map'
 }
