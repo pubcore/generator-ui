@@ -58,6 +58,8 @@ module.exports = class extends Generator {
 			'redux-create-reducer', 'redux-thunk', 'window-or-global'
 		], {save:true})
 		this.npmInstall()
+	}
+	end(){
 		this.spawnCommandSync('git', ['init'])
 		this.spawnCommandSync('git', ['add', '.'])
 		this.spawnCommandSync('git', ['commit', '-m "init"'])
