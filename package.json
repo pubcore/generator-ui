@@ -1,6 +1,6 @@
 {
   "name": "@pubcore/generator-ui",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "create ui package scaffolding",
   "files": [
     "app"
