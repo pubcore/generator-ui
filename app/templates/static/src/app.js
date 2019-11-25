@@ -10,23 +10,14 @@ import initAction from './action/appInit'
 import thunkMiddleware from 'redux-thunk'
 import {setStore} from '@pubcore/state'
 import {listenUri} from '@pubcore/redux-browser-history'
-import T from './resources/text'
-
 import Application from './views/Application'
 
-import {initLogMissingTextkey} from '@pubcore/ui-text'
-
-var {component} = root.appResources,
-	{logMissingTextkeyUri} = component
-
-initLogMissingTextkey({
-	postUri: logMissingTextkeyUri
-})
+var {component} = root.appResources
 const composeEnhancers = root.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
 	rootReducer(),
 	{
-		T,
+		T:component.text || {},
 		resources:{}
 	},
 	composeEnhancers(
