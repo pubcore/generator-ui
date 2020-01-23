@@ -45,8 +45,7 @@ module.exports = class extends Generator {
 	install(){
 		this.log('Install packages ...')
 		this.npmInstall([
-			'@babel/cli', '@babel/core', 'babel-loader',
-			'@babel/plugin-proposal-object-rest-spread', '@babel/preset-env',
+			'@babel/cli', '@babel/core', 'babel-loader', '@babel/preset-env',
 			'@babel/preset-react', '@babel/runtime',
 			'eslint', 'eslint-plugin-react', 'webpack',
 			'webpack-cli', 'webpack-manifest-plugin', 'webpack-node-externals',
