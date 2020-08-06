@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "update-notifier": "^2.5.0",
+    "update-notifier": "^4.1.0",
     "yeoman-generator": "^3.2.0"
   },
   "devDependencies": {
